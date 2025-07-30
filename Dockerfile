@@ -13,6 +13,9 @@ RUN apt-get update && apt-get install -y \
 COPY pyproject.toml .
 COPY src ./src
 
+# Set version for setuptools-scm since .git directory is not available in Docker build
+ENV SETUPTOOLS_SCM_PRETEND_VERSION_FOR_WAYBACK=0.1.0
+
 # Install Python dependencies
 RUN pip install --no-cache-dir -e .[mcp]
 
