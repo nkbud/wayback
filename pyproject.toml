@@ -24,6 +24,12 @@ dependencies = [
   "urllib3>=1.20",
 ]
 
+[project.optional-dependencies.mcp]
+# Dependencies for MCP server functionality
+mcp = [
+  "fastmcp>=0.5.0",
+]
+
 [project.optional-dependencies]
 # For developing the package (running tests, packaging, etc.) but not needed
 # for _using_ it. Some tooling requires newer Python versions than the package
@@ -55,6 +61,9 @@ test = [
     "pytest",
     "vcrpy",
 ]
+
+[project.scripts]
+wayback-mcp-server = "wayback.mcp_server.cli:main"
 
 [project.urls]
 "Homepage" = "https://github.com/edgi-govdata-archiving/wayback"

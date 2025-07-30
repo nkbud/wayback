@@ -52,6 +52,29 @@ Finally, search for all the mementos of ``nasa.gov`` before 1999 and download th
 Read the `full documentation <https://wayback.readthedocs.io/>`_ for a more in-depth tutorial and complete API reference documentation at https://wayback.readthedocs.io/
 
 
+MCP Server for AI Agents
+-------------------------
+
+This repository now includes an MCP (Model Context Protocol) server that provides AI agents with access to historical web pages and digital archives. The server focuses on high-authority sources and includes:
+
+* **Wayback Machine Integration**: Search and retrieve historical web captures
+* **Library of Congress**: Direct access to LoC digital collections  
+* **High-Authority Sources**: Prioritized access to authoritative archives
+* **Docker Support**: Easy deployment with containerization
+
+To run the MCP server::
+
+    $ pip install -e .[mcp]
+    $ wayback-mcp-server
+
+Or using Docker::
+
+    $ docker build -t wayback-mcp-server .
+    $ docker run -p 8000:8000 wayback-mcp-server
+
+See `docs/mcp-server.md <docs/mcp-server.md>`_ for complete documentation.
+
+
 Code of Conduct
 ---------------
 
